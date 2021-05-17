@@ -1,32 +1,46 @@
 * {
     margin: 0;
     padding: 0;
+    // added this line 
+    box-sizing: border-box;
 }
 
 body {
     background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // min height to just height
+    height: 100vh;
+    // faster centering but with grid
+    display: grid;
+    place-content: center;
 }
 
 .post {
     position: relative;
     cursor: pointer;
+    // got this from here: https://cssgenerator.org/box-shadow-css-generator.html
+    box-shadow: 0px 6px 45px -9px rgba(0,0,0,0.63);
+    // changed the border-radius property
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 
-    .insta-post {
+    .post-image {
+        // removed height: auto
         max-width: 400px;
-        height: auto;
-        border-radius: 5px;
+        // changed the border-radius property
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
     }
 
-    .likes {
-        font-size: 1.5em;
-        margin-top: 8px;
-        color: #000;
+    .text {
+        padding: 10px;
+
+        .likes {
+            font-size: 1.5em;
+            // removed the margin
+            color: #000;
+        }
     }
 
     .heart-icon {
@@ -34,8 +48,11 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        filter: drop-shadow(0px 19px 38px rgba(0, 0, 0, 0.7));
+        // changed to white
+        filter: drop-shadow(0px 19px 38px rgba(255, 255, 255, 0.7));
         transform-origin: center center;
+        // added height property
+        height: 150px;
         width: 0;
     }
 

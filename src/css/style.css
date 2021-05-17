@@ -1,44 +1,87 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   background-color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
 }
 
 .post {
   position: relative;
   cursor: pointer;
+  -webkit-box-shadow: 0px 6px 45px -9px rgba(0, 0, 0, 0.63);
+          box-shadow: 0px 6px 45px -9px rgba(0, 0, 0, 0.63);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
-.post .insta-post {
+
+.post .post-image {
   max-width: 400px;
-  height: auto;
-  border-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
-.post .likes {
+
+.post .text {
+  padding: 10px;
+}
+
+.post .text .likes {
   font-size: 1.5em;
-  margin-top: 8px;
   color: #000;
 }
+
 .post .heart-icon {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  filter: drop-shadow(0px 19px 38px rgba(0, 0, 0, 0.7));
-  transform-origin: center center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-filter: drop-shadow(0px 19px 38px rgba(255, 255, 255, 0.7));
+          filter: drop-shadow(0px 19px 38px rgba(255, 255, 255, 0.7));
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  height: 150px;
   width: 0;
 }
+
 .post .animate-like {
-  animation: 2s animateLike ease-in-out forwards;
+  -webkit-animation: 2s animateLike ease-in-out forwards;
+          animation: 2s animateLike ease-in-out forwards;
 }
+
+@-webkit-keyframes animateLike {
+  0% {
+    width: 0;
+  }
+  5% {
+    width: 180px;
+  }
+  10% {
+    width: 150px;
+  }
+  20% {
+    width: 160px;
+  }
+  30% {
+    width: 160px;
+  }
+  40% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+
 @keyframes animateLike {
   0% {
     width: 0;
@@ -62,3 +105,4 @@ body {
     width: 0;
   }
 }
+/*# sourceMappingURL=style.css.map */
